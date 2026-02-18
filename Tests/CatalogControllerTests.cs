@@ -80,7 +80,7 @@ namespace EShopOnWeb.Tests
                 else if (foundOutOfStock)
                 {
                     // If we found an in-stock item after an out-of-stock item, fail
-                    Assert.True(false, "In-stock items should appear before out-of-stock items");
+                    Assert.Fail("In-stock items should appear before out-of-stock items");
                 }
             }
         }

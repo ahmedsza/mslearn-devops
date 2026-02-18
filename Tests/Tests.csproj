@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../EShopOnWeb.csproj" />
+    <ProjectReference Include="../src/EShopOnWeb.csproj" />
   </ItemGroup>
 
 </Project>
