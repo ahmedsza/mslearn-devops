@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Menu Demo - EShopOnWeb</title>
+    <link rel="stylesheet" href="wwwroot/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a class="navbar-brand" href="/">EShopOnWeb</a>
+                
+                <!-- Hamburger menu button for mobile -->
+                <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Desktop navigation -->
+                <div class="navbar-menu desktop-menu">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/catalog">Catalog</a>
+                    <a class="nav-link" href="/basket">Basket</a>
+                    <a class="nav-link" href="/account">Account</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile menu overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <div class="mobile-menu-content">
+                <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">
+                    <span>&times;</span>
+                </button>
+                <nav class="mobile-menu-nav">
+                    <a class="mobile-nav-link" href="/">Home</a>
+                    <a class="mobile-nav-link" href="/catalog">Catalog</a>
+                    <a class="mobile-nav-link" href="/basket">Basket</a>
+                    <a class="mobile-nav-link" href="/account">Account</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="main-content">
+        <div class="container">
+            <h1>Mobile Menu Overlay Demo</h1>
+            <p>This demo shows the mobile menu fix for iOS Safari and Chrome Mobile.</p>
+
+            <h2>Mobile Menu Features</h2>
+            <ul>
+                <li>✅ Full-screen overlay approach on mobile devices</li>
+                <li>✅ Click outside the menu to close it</li>
+                <li>✅ Smooth CSS transitions for menu animations</li>
+                <li>✅ Works correctly on iOS Safari 15+ and Chrome Mobile</li>
+                <li>✅ Accessible keyboard navigation (Escape key to close)</li>
+                <li>✅ Handles orientation changes gracefully</li>
+            </ul>
+
+            <h2>How to Test</h2>
+            
+            <h3>Method 1: On a Real Mobile Device</h3>
+            <ol>
+                <li>Open this HTML file on your mobile device</li>
+                <li>Tap the hamburger menu icon (☰) in the top right</li>
+                <li>Verify the menu appears as a full-screen overlay</li>
+                <li>Tap outside the white menu area to close it</li>
+                <li>Open again and tap the × button to close</li>
+                <li>Rotate your device to test orientation changes</li>
+            </ol>
+
+            <h3>Method 2: Using Browser DevTools</h3>
+            <ol>
+                <li>Open this page in Chrome or Safari</li>
+                <li>Press F12 to open Developer Tools</li>
+                <li>Click the device toolbar icon (or Ctrl+Shift+M / Cmd+Shift+M)</li>
+                <li>Select a mobile device (e.g., iPhone 12 Pro)</li>
+                <li>Test the menu functionality</li>
+            </ol>
+
+            <h2>Technical Details</h2>
+            
+            <h3>Problem Fixed</h3>
+            <p>Previously, the mobile hamburger menu would expand over page content without proper overlay or z-index management, causing usability issues on iOS Safari.</p>
+
+            <h3>Solution Implemented</h3>
+            <ul>
+                <li><strong>Full-screen overlay:</strong> Dark semi-transparent background (rgba(0, 0, 0, 0.8))</li>
+                <li><strong>Fixed positioning:</strong> Menu stays in place during scroll</li>
+                <li><strong>High z-index (1000):</strong> Ensures menu appears above all content</li>
+                <li><strong>Slide-in animation:</strong> Menu content slides from right with 0.3s transition</li>
+                <li><strong>Body scroll lock:</strong> Prevents background scrolling when menu is open</li>
+                <li><strong>iOS-specific fixes:</strong> Uses -webkit-fill-available for proper viewport height</li>
+                <li><strong>Click handlers:</strong> Closes on overlay click, close button, nav link click, or Escape key</li>
+            </ul>
+
+            <h3>Files Modified</h3>
+            <ul>
+                <li><code>Views/Shared/_Layout.cshtml</code> - Added mobile menu overlay structure</li>
+                <li><code>wwwroot/css/site.css</code> - Added overlay styles and transitions</li>
+                <li><code>wwwroot/js/site.js</code> - Added menu interaction handlers</li>
+            </ul>
+
+            <h2>Accessibility Features</h2>
+            <ul>
+                <li>Keyboard navigation support (Escape to close)</li>
+                <li>ARIA labels on interactive elements</li>
+                <li>Focus management (moves to close button when opened)</li>
+                <li>Respects prefers-reduced-motion setting</li>
+                <li>High contrast mode support</li>
+            </ul>
+
+            <div style="height: 500px; background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); margin-top: 2rem; padding: 2rem; border-radius: 8px;">
+                <h3>Scrollable Content Area</h3>
+                <p>This area demonstrates that the page content continues normally. When the menu is open, you cannot scroll this content (body scroll is locked).</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2026 - EShopOnWeb - Mobile Menu Fix Demo
+        </div>
+    </footer>
+
+    <script src="wwwroot/js/site.js"></script>
+</body>
+</html>
