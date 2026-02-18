@@ -126,7 +126,7 @@ namespace EShopOnWeb.Tests
         }
         
         [Fact]
-        public void Product_IsOutOfStock_ReturnsTrueWhenStockIsZero()
+        public void IsOutOfStock_ReturnsTrueWhenStockIsZero()
         {
             // Arrange
             var product = new Product { AvailableStock = 0 };
@@ -136,7 +136,7 @@ namespace EShopOnWeb.Tests
         }
         
         [Fact]
-        public void Product_IsOutOfStock_ReturnsFalseWhenStockIsPositive()
+        public void IsOutOfStock_ReturnsFalseWhenStockIsPositive()
         {
             // Arrange
             var product = new Product { AvailableStock = 5 };
