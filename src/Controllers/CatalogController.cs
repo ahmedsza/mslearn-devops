@@ -1,15 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using EShopOnWeb.Models;
-using EShopOnWeb.ViewModels;
 
 namespace EShopOnWeb.Controllers
 {
-    public class CatalogController : Controller
+    public class CatalogController
     {
-        // Mock data - in real app this would come from a database
-        private static List<Product> _products = new List<Product>
+        // Mock data for demonstration purposes only
+        // In production, use a database-backed repository with proper dependency injection
+        // This static collection is NOT thread-safe and should not be used in a real application
+        private static readonly List<Product> _products = new List<Product>
         {
             new Product { Id = 1, Name = "Product 1", Description = "Description 1", Price = 10.99m, AvailableStock = 5, ImageUrl = "/images/product1.jpg" },
             new Product { Id = 2, Name = "Product 2", Description = "Description 2", Price = 20.99m, AvailableStock = 0, ImageUrl = "/images/product2.jpg" },
@@ -17,21 +17,7 @@ namespace EShopOnWeb.Controllers
             new Product { Id = 4, Name = "Product 4", Description = "Description 4", Price = 40.99m, AvailableStock = 0, ImageUrl = "/images/product4.jpg" },
             new Product { Id = 5, Name = "Product 5", Description = "Description 5", Price = 50.99m, AvailableStock = 3, ImageUrl = "/images/product5.jpg" }
         };
-
-        public IActionResult Index(string searchTerm = "", bool hideOutOfStock = false)
-        {
-            var products = GetProducts(searchTerm, hideOutOfStock);
-            
-            var viewModel = new CatalogSearchViewModel
-            {
-                Products = products,
-                SearchTerm = searchTerm,
-                HideOutOfStock = hideOutOfStock
-            };
-            
-            return View(viewModel);
-        }
-
+        
         /// <summary>
         /// Gets products based on search term and filter options.
         /// Out-of-stock items are sorted to appear at the bottom of results.
