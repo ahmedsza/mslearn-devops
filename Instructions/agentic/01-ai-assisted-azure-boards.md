@@ -322,6 +322,15 @@ Social login buttons trigger popup-based OAuth flows that are blocked by default
 ## Testing
 - Test with popup blocker enabled
 - Verify deep link return works correctly
+
+## Reference Implementation
+A complete sample implementation demonstrating the redirect-based OAuth flow fix is available in the `/SampleCode/SocialLoginFix` directory of this repository. This includes:
+- AccountController.cs - Server-side redirect implementation
+- Login.cshtml - Form-based OAuth buttons (no popups)
+- Startup.cs - OAuth provider configuration
+- README.md - Implementation guide
+- COMPARISON.md - Before/after comparison
+- TESTING.md - Comprehensive testing guide
 ```
 
 ### Subtask 2: Delegate Both Work Items
