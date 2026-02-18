@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container">
+    <h1>Welcome to EShopOnWeb</h1>
+    <p>This is a sample e-commerce application demonstrating the mobile menu overlay fix.</p>
+
+    <h2>Mobile Menu Features</h2>
+    <ul>
+        <li>Full-screen overlay approach on mobile devices</li>
+        <li>Click outside the menu to close it</li>
+        <li>Smooth CSS transitions for menu animations</li>
+        <li>Works correctly on iOS Safari 15+ and Chrome Mobile</li>
+        <li>Accessible keyboard navigation (Escape key to close)</li>
+        <li>Handles orientation changes gracefully</li>
+    </ul>
+
+    <h2>Testing Instructions</h2>
+    <h3>On iOS Safari:</h3>
+    <ol>
+        <li>Open this page on an iOS device with Safari 15 or later</li>
+        <li>Resize the browser window to mobile view (or view on actual mobile device)</li>
+        <li>Tap the hamburger menu icon (three horizontal lines) in the top right</li>
+        <li>Verify the menu appears as a full-screen overlay</li>
+        <li>Tap outside the menu content area to close it</li>
+        <li>Open the menu again and tap the X button to close it</li>
+        <li>Rotate the device to test orientation change behavior</li>
+    </ol>
+
+    <h3>On Chrome Mobile:</h3>
+    <ol>
+        <li>Open this page on an Android device with Chrome</li>
+        <li>Follow the same steps as iOS Safari</li>
+        <li>Verify smooth transitions and overlay behavior</li>
+    </ol>
+
+    <h3>Desktop Testing:</h3>
+    <ol>
+        <li>Open browser developer tools (F12)</li>
+        <li>Toggle device emulation mode</li>
+        <li>Select an iOS or mobile device profile</li>
+        <li>Test the menu functionality</li>
+    </ol>
+
+    <h2>Technical Implementation</h2>
+    <p>The mobile menu fix includes:</p>
+    <ul>
+        <li><strong>Z-index Management:</strong> Menu overlay set to z-index: 1000</li>
+        <li><strong>Position Fixes:</strong> Fixed positioning prevents content overlap</li>
+        <li><strong>CSS Transitions:</strong> Smooth 0.3s transitions for open/close animations</li>
+        <li><strong>iOS Safari Compatibility:</strong> Specific webkit fixes for iOS quirks</li>
+        <li><strong>Click-outside Handler:</strong> JavaScript event listener on overlay</li>
+        <li><strong>Body Scroll Prevention:</strong> Body overflow hidden when menu is open</li>
+        <li><strong>Accessibility:</strong> Keyboard support and focus management</li>
+    </ul>
+</div>

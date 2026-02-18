@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EShopOnWeb</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a class="navbar-brand" href="/">EShopOnWeb</a>
+                
+                <!-- Hamburger menu button for mobile -->
+                <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Desktop navigation -->
+                <div class="navbar-menu desktop-menu">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/catalog">Catalog</a>
+                    <a class="nav-link" href="/basket">Basket</a>
+                    <a class="nav-link" href="/account">Account</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile menu overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <div class="mobile-menu-content">
+                <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">
+                    <span>&times;</span>
+                </button>
+                <nav class="mobile-menu-nav">
+                    <a class="mobile-nav-link" href="/">Home</a>
+                    <a class="mobile-nav-link" href="/catalog">Catalog</a>
+                    <a class="mobile-nav-link" href="/basket">Basket</a>
+                    <a class="mobile-nav-link" href="/account">Account</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="main-content">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2026 - EShopOnWeb
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
