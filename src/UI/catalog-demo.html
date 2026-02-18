@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog - Out of Stock Feature Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card { margin-bottom: 20px; }
+        .out-of-stock-badge { margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Product Catalog</h1>
+        <p class="text-muted">Demonstration of out-of-stock items feature</p>
+        
+        <!-- Search and Filter Section -->
+        <form method="get" class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" name="searchTerm" class="form-control" placeholder="Search products..." value="" />
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" name="hideOutOfStock" id="hideOutOfStock" value="true" onchange="this.form.submit()" />
+                        <label class="form-check-label" for="hideOutOfStock">
+                            Hide out-of-stock items
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Product Grid -->
+        <div class="row">
+            <!-- In-Stock Product Example -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+1" class="card-img-top" alt="Product 1" />
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">Description for Product 1</p>
+                        <p class="card-text"><strong>$10.99</strong></p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Out-of-Stock Product Example -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+2" class="card-img-top" alt="Product 2" />
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Product 2
+                            <span class="badge bg-secondary out-of-stock-badge">Out of Stock</span>
+                        </h5>
+                        <p class="card-text">Description for Product 2</p>
+                        <p class="card-text"><strong>$20.99</strong></p>
+                        <button class="btn btn-secondary" disabled>Unavailable</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- In-Stock Product Example -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+3" class="card-img-top" alt="Product 3" />
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">Description for Product 3</p>
+                        <p class="card-text"><strong>$30.99</strong></p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Out-of-Stock Product Example (appears at bottom) -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+4" class="card-img-top" alt="Product 4" />
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Product 4
+                            <span class="badge bg-secondary out-of-stock-badge">Out of Stock</span>
+                        </h5>
+                        <p class="card-text">Description for Product 4</p>
+                        <p class="card-text"><strong>$40.99</strong></p>
+                        <button class="btn btn-secondary" disabled>Unavailable</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- In-Stock Product Example -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+5" class="card-img-top" alt="Product 5" />
+                    <div class="card-body">
+                        <h5 class="card-title">Product 5</h5>
+                        <p class="card-text">Description for Product 5</p>
+                        <p class="card-text"><strong>$50.99</strong></p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features Description -->
+        <div class="alert alert-info mt-5">
+            <h4>Features Implemented:</h4>
+            <ul>
+                <li><strong>Visual Badge:</strong> Out-of-stock products display a gray "Out of Stock" badge next to the product name</li>
+                <li><strong>Sorting:</strong> Out-of-stock items appear at the bottom of search results (Products 2 and 4 are out of stock)</li>
+                <li><strong>Filter Option:</strong> Checkbox to hide out-of-stock items from the display</li>
+                <li><strong>Disabled Button:</strong> Out-of-stock products have a disabled "Unavailable" button instead of "Add to Cart"</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
