@@ -36,11 +36,11 @@ This implementation addresses the requirement to improve the user experience whe
 ### ViewModels
 - `src/ViewModels/CatalogSearchViewModel.cs` - View model for catalog search results
 
-### Views
-- `src/Views/Catalog/Index.cshtml` - Razor view with product cards, badges, and filter UI
+### UI
+- `src/UI/catalog-demo.html` - HTML demo page with product cards, badges, and filter UI
 
 ### Tests
-- `src/Tests/CatalogControllerTests.cs` - Unit tests covering all new functionality
+- `Tests/CatalogControllerTests.cs` - Unit tests covering all new functionality
 
 ## Technical Details
 
@@ -57,10 +57,10 @@ This method handles:
 
 ### UI Components
 
-The Razor view includes:
+The HTML demo page includes:
 - Search input field with submit button
 - "Hide out-of-stock items" checkbox that submits form on change
-- Product cards with conditional badge rendering
+- Product cards with conditional badge rendering using Bootstrap `badge bg-secondary` class
 - Disabled "Unavailable" button for out-of-stock products
 
 ## Testing
@@ -80,8 +80,8 @@ The Razor view includes:
    - `GetProducts_WithSearchTermAndHideOutOfStock_AppliesBothFilters`
 
 4. **Model Tests**
-   - `Product_IsOutOfStock_ReturnsTrueWhenStockIsZero`
-   - `Product_IsOutOfStock_ReturnsFalseWhenStockIsPositive`
+   - `IsOutOfStock_ReturnsTrueWhenStockIsZero`
+   - `IsOutOfStock_ReturnsFalseWhenStockIsPositive`
 
 ### Running Tests
 
